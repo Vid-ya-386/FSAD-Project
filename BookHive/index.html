@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookHive | Find Your Next Favorite Book</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/HoneyBeeLogo.jpg" />
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+  <header>
+    <img src="assets/HoneyBeeLogo.jpg" alt="BookHiveLogo" class="logo" />
+    <h1>BookHive</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#genreHighlights">Genres</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    <input type="text" id="searchBar" placeholder="Search for books or authors..." />
+  </header>
+
+  <!-- ================= TRENDING BOOKS ================= -->
+  <section>
+    <h2>🔥 Trending Books</h2>
+    <div class="carousel-container">
+      <button class="scroll-btn left">❮</button>
+      <div class="book-container" id="trendingBooks"></div>
+      <button class="scroll-btn right">❯</button>
+    </div>
+  </section>
+
+  <!-- ================= NEW RELEASES ================= -->
+  <section>
+    <h2>🆕 New Releases</h2>
+    <div class="carousel-container">
+      <button class="scroll-btn left">❮</button>
+      <div class="book-container" id="newReleases"></div>
+      <button class="scroll-btn right">❯</button>
+    </div>
+  </section>
+
+  <!-- ================= GENRE HIGHLIGHTS ================= -->
+  <section id="genreHighlights">
+    <h2>🍯 Genre Highlights</h2>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>© 2025 BookHive | Made with 💛 and ☕</p>
+  </footer>
+
+  <!-- ================= SCRIPT ================= -->
+  <script src="script.js"></script>
+  <script>
+    // basic search functionality
+    document.getElementById("searchBar").addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        const query = e.target.value.trim();
+        if (query) {
+          localStorage.setItem("searchQuery", query);
+          window.location.href = "genre.html?search=" + encodeURIComponent(query);
+        }
+      }
+    });
+  </script>
+</body>
+</html>
