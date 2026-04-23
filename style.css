@@ -28,8 +28,8 @@ header {
 }
 
 header .logo {
-  width: 60px;
-  height: 60px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -332,4 +332,9 @@ footer {
     height: 35px;
     font-size: 1.2rem;
   }
+
+  .logo {
+    width: 40px;      /* change size here */
+    height: auto;
+}
 }

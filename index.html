@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>BookHive | Find Your Next Favorite Book</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/HoneyBeeLogo.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="HoneyBeeLogo.jpg" />
+
+  <!-- Connect CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
   <!-- ================= HEADER ================= -->
   <header>
-    <img src="assets/HoneyBeeLogo.jpg" alt="BookHiveLogo" class="logo" />
+    <img src="HoneyBeeLogo.jpg" alt="BookHiveLogo" class="logo" />
+
     <h1>BookHive</h1>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="#genreHighlights">Genres</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
     </nav>
-    <input type="text" id="searchBar" placeholder="Search for books or authors..." />
+
+    <input
+      type="text"
+      id="searchBar"
+      placeholder="Search for books or authors..."
+    />
   </header>
 
   <!-- ================= TRENDING BOOKS ================= -->
@@ -53,17 +68,20 @@
 
   <!-- ================= SCRIPT ================= -->
   <script src="script.js"></script>
+
   <script>
-    // basic search functionality
-    document.getElementById("searchBar").addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        const query = e.target.value.trim();
-        if (query) {
-          localStorage.setItem("searchQuery", query);
-          window.location.href = "genre.html?search=" + encodeURIComponent(query);
+    document.getElementById("searchBar")
+      .addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          const query = e.target.value.trim();
+          if (query) {
+            localStorage.setItem("searchQuery", query);
+            window.location.href =
+              "genre.html?search=" + encodeURIComponent(query);
+          }
         }
-      }
-    });
+      });
   </script>
+
 </body>
 </html>
